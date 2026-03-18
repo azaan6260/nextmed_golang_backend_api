@@ -1,0 +1,5 @@
+{
+  "name": "Nextmed 2.0 Backend",
+  "description": "Enterprise healthcare marketplace backend API built with Golang, Gin, and GORM.",
+  "requestFramePermissions": []
+}
