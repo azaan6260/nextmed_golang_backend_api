@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "go run main.go",
-    "build": "go build -o nextmed-backend main.go",
+    "build": "go mod tidy && go build -o nextmed-backend main.go",
     "start": "./nextmed-backend"
   },
   "dependencies": {
