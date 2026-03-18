@@ -3,13 +3,12 @@ FROM golang:1.21-alpine AS builder
 
 WORKDIR /app
 
-# Copy go.mod and go.sum (if it exists)
-COPY go.mod ./
-# Since we don't have go.sum, we run go mod tidy here
-RUN go mod tidy
-
-# Copy the rest of the source code
+# Copy the source code
 COPY . .
+
+# Run go mod tidy to generate go.sum and download dependencies
+RUN go mod tidy
+RUN go mod download
 
 # Build the application
 RUN go build -o nextmed-backend main.go
