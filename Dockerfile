@@ -20,8 +20,6 @@ WORKDIR /app
 
 # Copy the binary from the builder stage
 COPY --from=builder /app/nextmed-backend .
-# Copy the .env file if it exists
-COPY --from=builder /app/.env .
 
 # Expose the port the app runs on
 EXPOSE 3000
