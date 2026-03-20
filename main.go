@@ -31,6 +31,7 @@ func main() {
 		&models.FacilityDoctor{},
 		&models.Appointment{},
 		&models.Post{},
+		&models.TriageChat{},
 	)
 	if err != nil {
 		log.Fatalf("Migration failed: %v", err)
@@ -53,6 +54,7 @@ func main() {
 	routes.SetupAuthRoutes(r)
 	routes.SetupBookingRoutes(r)
 	routes.SetupFeedRoutes(r)
+	routes.SetupTriageRoutes(r)
 
 	// 7. Start Server
 	port := os.Getenv("PORT")

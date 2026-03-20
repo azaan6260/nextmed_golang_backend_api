@@ -10,9 +10,10 @@ import (
 func SetupFeedRoutes(r *gin.Engine) {
 	feedController := &controllers.FeedController{}
 
-	v1 := r.Group("/api/v1/feed")
+	v1 := r.Group("/api/v1")
 	{
 		v1.POST("/posts", feedController.CreatePost)
-		v1.GET("/", feedController.GetFeed)
+		v1.GET("/posts/get-upload-url", feedController.GetUploadURL)
+		v1.GET("/feed", feedController.GetFeed)
 	}
 }

@@ -13,6 +13,8 @@ type Post struct {
 	DoctorID    uint      `gorm:"index;not null" json:"doctor_id"` // Links to models.User (ID)
 	ContentText string    `gorm:"type:text;not null" json:"content_text"`
 	CategoryTag string    `json:"category_tag"`
+	MediaURL    string    `json:"media_url"`
+	MediaType   string    `json:"media_type"` // 'VIDEO_HLS', 'IMAGE', or 'TEXT'
 	CreatedAt   time.Time `json:"created_at"`
 }
 
